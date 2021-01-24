@@ -9,35 +9,57 @@ object Exercise6Films {
   // You DO NOT need to reference previous answers in later ones.
 
   def nameOfFilm(film: Film): String = {
-    ???
+    film.name
   }
 
   def filmsByDirector(director: Director): List[Film] = {
-    ???
+    director.films
   }
 
-  def directorsWithBackCatalogOfSize(directors: List[Director], numberOfFilms: Int): List[Director] = {
-    ???
+  def directorsWithBackCatalogOfSize(
+      directors: List[Director],
+      numberOfFilms: Int
+  ): List[Director] = {
+    directors.filter(x => x.films.length >= numberOfFilms)
   }
 
-  def directorsBornBefore(directors: List[Director], year: Int): List[Director] = {
-    ???
+  def directorsBornBefore(
+      directors: List[Director],
+      year: Int
+  ): List[Director] = {
+    directors.filter(x => x.yearOfBirth < year)
   }
 
-  def directorsBornBeforeWithBackCatalogOfSize(directors: List[Director], year: Int, numberOfFilms: Int): List[Director] = {
-    ???
+  def directorsBornBeforeWithBackCatalogOfSize(
+      directors: List[Director],
+      year: Int,
+      numberOfFilms: Int
+  ): List[Director] = {
+    directors.filter(x =>
+      x.yearOfBirth < year && x.films.length >= numberOfFilms
+    )
+    // or
+    // directors
+    //   .filter(x => x.yearOfBirth < year)
+    //   .filter(x => x.films.length >= numberOfFilms)
+
   }
 
   def namesOfFilms(films: List[Film]): List[String] = {
-    ???
+    films.map(x => x.name)
   }
 
   def namesOfFilmsByDirector(director: Director): List[String] = {
-    ???
+    director.films.map(x => x.name)
   }
 
-  def namesOfFilmsByDirectorScoringAtLeast(director: Director, imdbRating: Double): List[String] = {
-    ???
+  def namesOfFilmsByDirectorScoringAtLeast(
+      director: Director,
+      imdbRating: Double
+  ): List[String] = {
+    director.films
+      .filter(x => x.imdbRating >= imdbRating)
+      .map(x => x.name)
   }
 
   def main(args: Array[String]): Unit = {
