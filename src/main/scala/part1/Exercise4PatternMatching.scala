@@ -6,19 +6,31 @@ object Exercise4PatternMatching {
   }
 
   def contains(numbers: List[Int], num: Int): Boolean = {
-    ???
+    numbers match {
+      case Nil          => false
+      case head :: tail => head == num || contains(tail, num)
+    }
   }
 
   def doubleEachNumber(numbers: List[Int]): List[Int] = {
-    ???
+    numbers match {
+      case Nil          => Nil
+      case head :: tail => head * 2 :: doubleEachNumber(numbers.tail)
+    }
   }
 
   def total(numbers: List[Int]): Int = {
-    ???
+    numbers match {
+      case Nil          => 0
+      case head :: tail => head + total(numbers.tail)
+    }
   }
 
   def append(a: List[Int], b: List[Int]): List[Int] = {
-    ???
+    a match {
+      case Nil          => b
+      case head :: tail => head :: append(tail, b)
+    }
   }
 
   def main(args: Array[String]): Unit = {
