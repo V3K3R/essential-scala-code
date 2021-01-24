@@ -9,6 +9,9 @@
 .bloop/
 
 ### Eclipse ###
+.vscode
+
+### Eclipse ###
 .metadata
 bin/
 tmp/
