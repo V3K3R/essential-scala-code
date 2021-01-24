@@ -2,23 +2,31 @@ package part1
 
 object Exercise3bRecursion {
   def contains(numbers: List[Int], num: Int): Boolean = {
-    ???
+    if (numbers.length == 0) false
+    else {
+      if (numbers.head == num) true
+      else contains(numbers.tail, num)
+    }
   }
 
   def doubleEachNumber(numbers: List[Int]): List[Int] = {
-    ???
+    if (numbers.length == 0) Nil
+    else numbers.head * 2 :: doubleEachNumber(numbers.tail)
   }
 
   def total(numbers: List[Int]): Int = {
-    ???
+    if (numbers.length == 0) 0
+    else numbers.head + total(numbers.tail)
   }
 
   def range(from: Int, to: Int): List[Int] = {
-    ???
+    if (to - from < 0) Nil
+    else from :: range(from + 1, to)
   }
 
   def append(a: List[Int], b: List[Int]): List[Int] = {
-    ???
+    if (a == Nil) b
+    else a.head :: append(a.tail, b)
   }
 
   def main(args: Array[String]): Unit = {
