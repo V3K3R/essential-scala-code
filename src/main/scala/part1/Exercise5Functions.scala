@@ -2,27 +2,27 @@ package part1
 
 object Exercise5Functions {
   def contains(numbers: List[Int], num: Int): Boolean = {
-    ???
+    numbers.contains(num)
   }
 
   def containsEvenNumbers(numbers: List[Int]): Boolean = {
-    ???
+    numbers.exists(x => x % 2 == 0)
   }
 
   def evenNumbersOnly(numbers: List[Int]): List[Int] = {
-    ???
+    numbers.filter(x => x % 2 == 0)
   }
 
   def doubleEachNumber(numbers: List[Int]): List[Int] = {
-    ???
+    numbers.map(x => x * 2)
   }
 
   def multiplyEachNumberBy(numbers: List[Int], num: Int): List[Int] = {
-    ???
+    numbers.map(x => x * num)
   }
 
   def evenNumbersOnlyDoubled(numbers: List[Int]): List[Int] = {
-    ???
+    numbers.filter(x => x % 2 == 0).map(x => x * 2)
   }
 
   def main(args: Array[String]): Unit = {
