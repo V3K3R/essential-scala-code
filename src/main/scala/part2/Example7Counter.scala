@@ -4,6 +4,19 @@ package part2
 
 // Write your Counter class (and companion object) here!
 
+class Counter(var value: Int) {
+  def increment: Counter = new Counter(value + 1)
+  override def equals(x: Any): Boolean = {
+    x match {
+      case x: Counter => this.value == x.value
+      case _          => false
+    }
+  }
+  override def toString: String = {
+    s"Counter($value)"
+  }
+}
+
 // ----------------------------------------------
 
 object Example7Counter {
